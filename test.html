@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Testing React</title>
+  <meta charset="utf-8"> 
+</head>
+<body>
+<script src="testbuild/app.js"></script>
+<!-- <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> -->
+ <!--  <script src="node_modules/mocha/mocha.js"></script>
+  <script src="node_modules/chai/chai.js"></script> -->
+  <script lang="text/javascript">
+    mocha.setup({
+        ui: 'bdd',
+        reporter: function(runner) {
+            // Note I am registering both an HTML and a TeamCity reporter here
+            // so I can use the same HTML page for local browser development and
+            // TeamCity.
+            new mocha.reporters.HTML(runner);
+            new mocha.reporters.Teamcity(runner);
+        },
+        ignoreLeaks: true,
+        timeout: 5000 // ms
+    });
+ 
+    $(function(){
+        mocha.run();
+    })
+</script>
+
+
+<!-- <script src="test/react-test.js"></script> -->
+</body>
+</html>
